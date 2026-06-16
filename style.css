@@ -1,11 +1,12 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
@@ -17,22 +18,22 @@ body{
 /* Header */
 header{
     position:fixed;
-    width:100%;
     top:0;
     left:0;
+    width:100%;
+    padding:22px 8%;
     background:#000;
-    padding:20px 8%;
     display:flex;
     justify-content:space-between;
     align-items:center;
     z-index:1000;
-    border-bottom:1px solid rgba(212,175,55,.2);
+    border-bottom:1px solid rgba(212,175,55,0.2);
 }
 
 .logo{
-    color:#d4af37;
     font-size:32px;
-    font-weight:700;
+    font-weight:800;
+    color:#d4af37;
 }
 
 .logo span{
@@ -42,8 +43,9 @@ header{
 nav a{
     color:#fff;
     text-decoration:none;
-    margin-left:30px;
-    transition:.3s;
+    margin-left:35px;
+    font-weight:500;
+    transition:0.3s;
 }
 
 nav a:hover{
@@ -56,8 +58,8 @@ nav a:hover{
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:60px;
     padding:140px 8% 80px;
-    gap:50px;
 }
 
 .hero-content{
@@ -65,9 +67,10 @@ nav a:hover{
 }
 
 .hero-content h1{
-    font-size:60px;
-    line-height:1.2;
-    margin-bottom:20px;
+    font-size:72px;
+    line-height:1.15;
+    margin-bottom:25px;
+    font-weight:800;
 }
 
 .hero-content h1 span{
@@ -75,19 +78,33 @@ nav a:hover{
 }
 
 .hero-content p{
+    font-size:20px;
     color:#cfcfcf;
-    margin-bottom:30px;
-    font-size:18px;
+    max-width:650px;
+    margin-bottom:40px;
 }
 
+.hero-image{
+    flex:1;
+    text-align:center;
+}
+
+.hero-image img{
+    width:100%;
+    max-width:450px;
+    border-radius:25px;
+    box-shadow:0 0 35px rgba(212,175,55,0.25);
+}
+
+/* Buttons */
 .btn{
     display:inline-block;
-    padding:14px 28px;
-    margin-right:15px;
-    border-radius:8px;
+    padding:16px 32px;
+    border-radius:10px;
     text-decoration:none;
     font-weight:600;
-    transition:.3s;
+    transition:0.3s;
+    margin-right:15px;
 }
 
 .btn-gold{
@@ -101,29 +118,17 @@ nav a:hover{
 }
 
 .btn:hover{
-    transform:translateY(-3px);
-}
-
-.hero-image{
-    flex:1;
-    text-align:center;
-}
-
-.hero-image img{
-    width:100%;
-    max-width:420px;
-    border-radius:20px;
-    box-shadow:0 0 30px rgba(212,175,55,.25);
+    transform:translateY(-5px);
 }
 
 /* Sections */
 section{
-    padding:80px 8%;
+    padding:90px 8%;
 }
 
 .section-title{
     text-align:center;
-    font-size:40px;
+    font-size:48px;
     margin-bottom:50px;
 }
 
@@ -135,20 +140,21 @@ section{
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
+    gap:30px;
 }
 
 .card{
     background:#111;
-    padding:30px;
-    border-radius:15px;
-    border:1px solid rgba(212,175,55,.15);
-    transition:.3s;
+    padding:35px 30px;
+    border-radius:18px;
+    border:1px solid rgba(212,175,55,0.15);
+    transition:0.3s;
 }
 
 .card:hover{
     transform:translateY(-10px);
     border-color:#d4af37;
+    box-shadow:0 0 20px rgba(212,175,55,0.15);
 }
 
 .card h3{
@@ -162,104 +168,59 @@ section{
 }
 
 .contact-box p{
+    font-size:20px;
     margin:15px 0;
-    font-size:18px;
+}
+
+.contact-box .btn{
+    margin-top:20px;
 }
 
 /* Footer */
 footer{
     text-align:center;
-    padding:30px;
+    padding:40px 8%;
     background:#000;
     color:#aaa;
+    border-top:1px solid rgba(212,175,55,0.2);
     font-size:14px;
 }
 
 /* Mobile */
 @media(max-width:768px){
 
-    .hero{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .hero-content h1{
-        font-size:42px;
+    header{
+        padding:18px 5%;
     }
 
     nav{
         display:none;
     }
-}
-/* Services */
-.services,
-.why,
-.contact {
-    padding: 80px 8%;
-    background: #0b0b0b;
-    color: white;
-    text-align: center;
-}
 
-.services h2,
-.why h2,
-.contact h2 {
-    font-size: 42px;
-    margin-bottom: 40px;
-    color: #d4af37;
-}
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding:120px 5% 60px;
+    }
 
-.service-grid,
-.why-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 25px;
-}
+    .hero-content h1{
+        font-size:46px;
+    }
 
-.service-card,
-.why-box {
-    background: #111;
-    padding: 30px;
-    border-radius: 18px;
-    border: 1px solid rgba(212,175,55,0.3);
-    transition: 0.3s;
-}
+    .hero-content p{
+        font-size:17px;
+    }
 
-.service-card:hover,
-.why-box:hover {
-    transform: translateY(-8px);
-    border-color: #d4af37;
-}
+    .hero-image img{
+        max-width:300px;
+    }
 
-.contact p {
-    font-size: 18px;
-    margin: 12px 0;
-}
+    .section-title{
+        font-size:36px;
+    }
 
-.whatsapp-btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 15px 35px;
-    background: #d4af37;
-    color: black;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: 600;
-}
-
-.whatsapp-btn:hover {
-    opacity: 0.9;
-}
-
-footer {
-    background: black;
-    color: #bbb;
-    text-align: center;
-    padding: 40px 8%;
-    border-top: 1px solid rgba(212,175,55,0.2);
-}
-
-footer h3 {
-    color: #d4af37;
-    margin-bottom: 15px;
+    .btn{
+        display:block;
+        margin:15px auto;
+    }
 }
