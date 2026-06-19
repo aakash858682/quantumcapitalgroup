@@ -8,7 +8,7 @@ document.querySelectorAll('nav a').forEach(link => {
   });
 });
 
-const cards = document.querySelectorAll('.card, .about-box, .contact-box');
+const animatedItems = document.querySelectorAll('.card, .about-box, .contact-box');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -18,11 +18,11 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.15 });
 
-cards.forEach(card => {
-  card.style.opacity = "0";
-  card.style.transform = "translateY(30px)";
-  card.style.transition = "0.6s ease";
-  observer.observe(card);
+animatedItems.forEach(item => {
+  item.style.opacity = "0";
+  item.style.transform = "translateY(30px)";
+  item.style.transition = "0.6s ease";
+  observer.observe(item);
 });
 
 const style = document.createElement('style');
