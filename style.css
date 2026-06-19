@@ -9,9 +9,10 @@
 }
 
 body{
-  background:#090909;
+  background:#080808;
   color:#fff;
   line-height:1.6;
+  overflow-x:hidden;
 }
 
 header{
@@ -19,7 +20,7 @@ header{
   top:0;
   left:0;
   width:100%;
-  padding:16px 7%;
+  padding:14px 7%;
   background:#000;
   display:flex;
   justify-content:space-between;
@@ -36,8 +37,8 @@ header{
 }
 
 .logo img{
-  width:52px;
-  height:52px;
+  width:48px;
+  height:48px;
   border-radius:50%;
   object-fit:cover;
 }
@@ -52,7 +53,7 @@ nav a{
   color:#fff;
   text-decoration:none;
   margin-left:30px;
-  font-weight:500;
+  font-weight:600;
   transition:0.3s;
 }
 
@@ -67,16 +68,60 @@ nav a:hover{
   justify-content:space-between;
   gap:60px;
   padding:135px 7% 70px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background:
+    radial-gradient(circle at 15% 30%, rgba(212,175,55,0.13), transparent 25%),
+    radial-gradient(circle at 90% 70%, rgba(212,175,55,0.10), transparent 25%),
+    linear-gradient(120deg, rgba(212,175,55,0.08) 1px, transparent 1px),
+    linear-gradient(60deg, rgba(212,175,55,0.05) 1px, transparent 1px);
+  background-size:cover, cover, 90px 90px, 130px 130px;
+  opacity:0.85;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg, #080808 0%, rgba(8,8,8,0.92) 40%, rgba(8,8,8,0.7) 100%);
+  z-index:0;
+}
+
+.hero::after{
+  content:"BULL  •  BEAR  •  CHARTS  •  MARKET  •  GROWTH";
+  position:absolute;
+  right:-40px;
+  bottom:80px;
+  font-size:70px;
+  font-weight:800;
+  letter-spacing:6px;
+  color:rgba(212,175,55,0.045);
+  z-index:0;
+  transform:rotate(-8deg);
+  white-space:nowrap;
+}
+
+.hero-content,
+.hero-image{
+  position:relative;
+  z-index:2;
 }
 
 .hero-content{
-  flex:1;
+  flex:1.15;
 }
 
 .tagline{
   color:#d4af37;
-  font-weight:600;
-  letter-spacing:2px;
+  font-weight:700;
+  letter-spacing:3px;
   margin-bottom:15px;
   text-transform:uppercase;
 }
@@ -95,7 +140,7 @@ nav a:hover{
 .hero-text{
   font-size:19px;
   color:#ccc;
-  max-width:650px;
+  max-width:680px;
   margin-bottom:35px;
 }
 
@@ -121,21 +166,33 @@ nav a:hover{
 
 .btn:hover{
   transform:translateY(-4px);
-  box-shadow:0 10px 25px rgba(212,175,55,0.2);
+  box-shadow:0 10px 25px rgba(212,175,55,0.22);
+}
+
+.market-ticker{
+  margin-top:35px;
+  color:#d4af37;
+  font-weight:700;
+  letter-spacing:2px;
+  font-size:14px;
+  opacity:0.85;
+  border-top:1px solid rgba(212,175,55,0.25);
+  border-bottom:1px solid rgba(212,175,55,0.25);
+  padding:12px 0;
 }
 
 .hero-image{
-  flex:1;
+  flex:0.85;
   text-align:center;
 }
 
 .hero-image img{
   width:100%;
-  max-width:440px;
+  max-width:420px;
   border-radius:25px;
   object-fit:cover;
   border:1px solid rgba(212,175,55,0.35);
-  box-shadow:0 0 45px rgba(212,175,55,0.28);
+  box-shadow:0 0 55px rgba(212,175,55,0.30);
 }
 
 section{
@@ -253,6 +310,11 @@ footer p{
   font-size:14px;
 }
 
+footer a{
+  color:#d4af37;
+  text-decoration:none;
+}
+
 .copyright{
   margin-top:18px;
   color:#d4af37;
@@ -271,7 +333,7 @@ footer p{
   align-items:center;
   justify-content:center;
   text-decoration:none;
-  font-size:30px;
+  font-size:28px;
   font-weight:800;
   z-index:2000;
   box-shadow:0 0 25px rgba(37,211,102,0.5);
@@ -283,7 +345,12 @@ footer p{
   }
 
   .logo span{
-    font-size:20px;
+    font-size:18px;
+  }
+
+  .logo img{
+    width:42px;
+    height:42px;
   }
 
   nav{
@@ -321,5 +388,9 @@ footer p{
 
   .hero-image img{
     max-width:310px;
+  }
+
+  .market-ticker{
+    font-size:12px;
   }
 }
